@@ -78,57 +78,6 @@ node -v
 cd examples/cartrade/
 npm install
 
-# fabric と eth(geth)起動
-sh script-start-ledgers.sh 
-
-# Fabric varidator
-# と Ethereum varidatorと
-sh script-build-all.sh
-
-# 起動 (それぞれ別のコンソールで)
-# varidator起動
-sh script-start-validator-fabric.sh
-sh script-start-validator-ethereum.sh
-
-# cartoradeアプリ起動
-sh script-start-cartrade.sh
-```
-
-# `gyp: No Xcode or CLT version detected!`のエラーがでたら。
-[npm install でエラー。gyp: No Xcode or CLT version detected!　 - Qiita](https://qiita.com/baby-0105/items/18f6fbc073e160bf83ac)
-```sh
-sudo rm -rf $(xcode-select -print-path)
-sudo rm -rf /Library/Developer/CommandLineTools
-xcode-select —install
-```
-
-# 動作確認
-```sh
-# ビルド(初回のみ)
-sh script-build-get-app.sh 
-
-# 残高と資産の確認
-sh script-get-app.sh
-
-# 資産移転の実行
-sh script-post-cartrade-sample.sh
-
-# 資産移転の実行
-sh script-get-app.sh
-```
-
-
-# Macでの起動手順
-```sh
-node -v
-# v12.21.0
-
-# packages/config/default.jsonを編集 
-# `http://xxx.xxx.xxx.xxx` -> `http://localhost`
-
-cd examples/cartrade/
-npm install
-
 # Ledger起動
 # fabric(1.4のfabric-samples) と eth(geth)起動
 sh script-start-ledgers.sh 
@@ -138,6 +87,7 @@ sh script-start-ledgers.sh
 # と Ethereum varidatorと
 sh script-build-all.sh
 
+# Cactus起動
 # 1. fabricのバリデーター起動
 sh script-start-validator-fabric.sh
 
@@ -146,4 +96,25 @@ sh script-start-validator-ethereum.sh
 
 # 3. cartradeアプリ起動
 sh script-start-cartrade.sh
+```
+
+
+### `gyp: No Xcode or CLT version detected!`のエラーがでたら。
+[npm install でエラー。gyp: No Xcode or CLT version detected!　 - Qiita](https://qiita.com/baby-0105/items/18f6fbc073e160bf83ac)
+```sh
+sudo rm -rf $(xcode-select -print-path)
+sudo rm -rf /Library/Developer/CommandLineTools
+xcode-select —install
+```
+
+## 動作確認
+```sh
+# ビルド(初回のみ)
+sh script-build-get-app.sh 
+
+# 残高と資産の確認
+sh script-get-app.sh
+
+# 資産移転の実行
+sh script-post-cartrade-sample.sh
 ```
