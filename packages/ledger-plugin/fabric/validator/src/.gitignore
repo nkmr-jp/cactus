@@ -6,3 +6,6 @@ core/npm-debug.log
 dependent/wallet/
 core/wallet/
 wallet/
+
+ValidatorAuthentication.ts
+package-lock.json

@@ -175,7 +175,7 @@ export class BusinessLogicCartrade extends BusinessLogicBase {
                 this.transactionInfoManagement.setTransactionData(tradeInfo, transactionData);
 
                 // Set Parameter
-                //logger.debug('secondTransaction data : ' + JSON.stringify(result.data));
+                // logger.debug('secondTransaction data : ' + JSON.stringify(result.data));
                 const contract = {"channelName": "mychannel"};
                 const method = {"type": "sendSignedTransaction"};
                 const args = {"args": [result.data]};
