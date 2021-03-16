@@ -34,6 +34,11 @@ start-eth-validator:
 start:
 	@sh script-start-cartrade.sh
 
+stop:
+	@sh script-stop-cartrade.sh
+
+restart: stop start
+
 .PHONY: get
 get:
 	@#sh script-get-app.sh
